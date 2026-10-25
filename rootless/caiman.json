@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "full": {
+    "location_ota": "https://github.com/xero-graphene/ota/releases/download/2026102101/caiman-2026102101-0a92fec-rootless.zip",
+    "location_csig": "https://github.com/xero-graphene/ota/releases/download/2026102101/caiman-2026102101-0a92fec-rootless.zip.csig"
+  }
+}
