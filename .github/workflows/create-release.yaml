@@ -9,6 +9,10 @@ on:
       rooted-graphene-version:
         description: Git ref of rooted graphene repo to use
         required: false
+
+permissions:
+  contents: write
+
 jobs:
   create-release:
     runs-on: ubuntu-latest
