@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v5
         with:
           repository: xeropresence/rooted-graphene
-          ref: ${{ github.event.inputs.rooted-graphene-version || inputs.rooted-graphene-version || 'main' }}
+          ref: ${{ github.event.inputs.rooted-graphene-version || inputs.rooted-graphene-version || 'apatch-ota-flavor' }}
           fetch-depth: 1 # Efficent checkout, we only need the one ref
       - name: Set inputs
         # Empty means, use version defined in rooted-ota.sh
