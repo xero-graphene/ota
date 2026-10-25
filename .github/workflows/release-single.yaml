@@ -49,6 +49,11 @@ on:
         type: boolean
         required: false
         default: false
+      skip-apatch:
+        description: skip building OTA rooted with APatch
+        type: boolean
+        required: false
+        default: false
       additional-env:
         description: Additional env var key value pairs, space separated, e.g. "A=1 B=2"
         default: ''
@@ -59,7 +64,7 @@ permissions:
 jobs:
   build-device:
     runs-on: ubuntu-latest
-    timeout-minutes: 20 # Make sure to not waste hours when some command does not return 
+    timeout-minutes: 30 # Make sure to not waste hours when some command does not return; four flavors take ~21 min
     steps:
       - name: Checkout rooted-graphene script repository
         uses: actions/checkout@v4
@@ -86,6 +91,7 @@ jobs:
           echo "SKIP_ROOTLESS=$(echo '${{ github.event.inputs.skip-rootless || '' }}' | xargs)" >> $GITHUB_ENV
           echo "SKIP_RELEASE=$(echo '${{ github.event.inputs.skip-release || '' }}' | xargs)" >> $GITHUB_ENV
           echo "SKIP_PIXINCREATE=$(echo '${{ github.event.inputs.skip-pixincreate || 'false' }}' | xargs)" >> $GITHUB_ENV
+          echo "SKIP_APATCH=$(echo '${{ github.event.inputs.skip-apatch || 'false' }}' | xargs)" >> $GITHUB_ENV
           
           if [[ "${{ github.event_name }}" == "push" ]]  || [[ "${{ github.event_name }}" == "pull_request" ]]; then
             echo "Running on push: Simple build without release for device $DEVICE_ID"
