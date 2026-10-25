@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "full": {
+    "location_ota": "https://github.com/xero-graphene/ota/releases/download/2026102101/shiba-2026102101-0a92fec-pixincreate-v31.0-3.zip",
+    "location_csig": "https://github.com/xero-graphene/ota/releases/download/2026102101/shiba-2026102101-0a92fec-pixincreate-v31.0-3.zip.csig"
+  }
+}
