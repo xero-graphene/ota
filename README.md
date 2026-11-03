@@ -1,7 +1,7 @@
 rooted-graphene OTA
 ===
 
-See [rooted-graphene](https://github.com/schnatterer/rooted-graphene/) for more details.
+See [rooted-graphene](https://github.com/xeropresence/rooted-graphene/tree/apatch-ota-flavor) for more details.
 
 This repo executes the builds for the actual OTAs.
 
