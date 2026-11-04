@@ -2,7 +2,9 @@ name: Create release
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    # Every 15 minutes, offset from the top of the hour, when GitHub delays or drops scheduled runs under load.
+    # Only creates the release; existing releases are skipped, so frequent checks never start duplicate builds.
+    - cron: '5-59/15 * * * *'
    # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
     inputs:

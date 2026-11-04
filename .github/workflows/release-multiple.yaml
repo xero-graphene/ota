@@ -19,6 +19,8 @@ jobs:
   # So run the whole matrix as cron. One of the first checks is if there is a need for release at all.
   build-devices:
     strategy:
+      # A failing device must not cancel the others mid-upload, which leaves assets without .csig or OTA server entries.
+      fail-fast: false
       matrix:
         include:
           - device-id: caiman # Pixel 9 Pro

@@ -64,6 +64,11 @@ permissions:
 jobs:
   build-device:
     runs-on: ubuntu-latest
+    # Builds of the same device from overlapping runs (cron, create-release, re-runs) upload identical asset names,
+    # so the later upload fails with 422. Queue them instead: the queued build re-checks the release and skips existing assets.
+    concurrency:
+      group: build-device-${{ inputs.device-id }}
+      cancel-in-progress: false
     timeout-minutes: 30 # Make sure to not waste hours when some command does not return; four flavors take ~21 min
     steps:
       - name: Checkout rooted-graphene script repository
