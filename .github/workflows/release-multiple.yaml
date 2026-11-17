@@ -3,8 +3,7 @@ name: Release multiple devices
 on:
   # Run daily in addition to release-multiple to make sure devices released later still get built
   schedule:
-    # Off the top of the hour, where GitHub delays or drops scheduled runs under load
-    - cron: '17 3 * * *'
+    - cron:  '0 3 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
